@@ -1,12 +1,12 @@
 import "./PokemonCard.css";
 
-interface PokemonInterface {
+export interface PokemonProps {
     name: string,
     imgSrc?: string
 }
 
 interface PokemonCardProps {
-  pokemon : PokemonInterface
+  pokemon : PokemonProps
 }
 
 const PokemonCard = ( {pokemon}: PokemonCardProps ) => {

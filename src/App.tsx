@@ -2,8 +2,9 @@ import { useState } from "react";
 import "./App.css";
 
 import PokemonCard from "./components/PokemonCard/PokemonCard";
+import NavBar from "./components/NavBar/NavBar";
 
-const pokemonList = [
+export const pokemonList = [
   {
     name: "bulbasaur",
     imgSrc:
@@ -39,23 +40,13 @@ function App() {
   }
 
   //To get rid of the React Error message below
-  /* if(pokemon === undefined) {
-    throw new Error("pokemon not found - variable is undefined");
-  } */
+  /* if(!pokemon) {
+      throw new Error("pokemon not found - variable is undefined");
+    } */
 
   return (
     <div>
-      <nav>
-        {pokemonList.map(poke => (
-          <button 
-            type="button" 
-            key={poke.name} 
-            onClick={() => setPokemonName(poke.name)}
-          >
-            {poke.name}
-          </button>
-        ))}
-      </nav>
+      <NavBar pokemonList={pokemonList} setPokemonName={setPokemonName} />
       <PokemonCard pokemon={pokemon} />
     </div>
   );
