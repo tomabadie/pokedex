@@ -1,3 +1,5 @@
+import "./PokemonCard.css";
+
 interface PokemonInterface {
     name: string,
     imgSrc?: string
